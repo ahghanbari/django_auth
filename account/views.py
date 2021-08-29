@@ -9,7 +9,12 @@ def dashboard(request):
     return render(request,
                   'account/dashboard.html')
 
-
+'''
+ Sign Up view method
+If user send GET request, we send UserRegistrationForm for him
+If user submit the form, we'll recieve POST request, then we 
+start to validation, if it was valid, we create User object.
+'''
 def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
